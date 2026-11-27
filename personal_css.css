@@ -29,7 +29,8 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 4px;
 }
@@ -151,10 +152,57 @@ h1 {
   letter-spacing: -0.045em;
 }
 
-.section-heading p,
-.project-area {
+.project-meta {
   color: var(--muted);
   font-size: 0.875rem;
+}
+
+.work-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  padding-bottom: 1.25rem;
+}
+
+.work-filters button {
+  min-height: 2.5rem;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  color: var(--ink);
+  background: var(--page);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.work-filters button:hover {
+  border-color: var(--ink);
+}
+
+.work-filters button[aria-pressed="true"] {
+  border-color: var(--ink);
+  color: var(--page);
+  background: var(--ink);
+}
+
+.work-filters button:focus-visible {
+  outline-color: var(--ink);
+}
+
+.work-filters[hidden],
+.project[hidden] {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .project {

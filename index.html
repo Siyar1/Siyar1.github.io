@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Siyar Urya | Engineering Portfolio</title>
-  <meta name="description" content="Siyar Urya’s engineering portfolio, with selected work in off-road autonomy, machine learning, and structured web extraction.">
+  <meta name="description" content="Siyar Urya’s engineering portfolio, with selected work in scientific data analysis, robotics, machine learning, and backend systems.">
   <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://siyar1.github.io/">
   <link rel="stylesheet" href="personal_css.css">
@@ -26,8 +26,8 @@
   <main id="main" class="shell" tabindex="-1">
     <section class="intro" aria-labelledby="name">
       <h1 id="name">Siyar Urya</h1>
-      <p class="intro-lead">Robotics, machine learning, and research engineering.</p>
-      <p class="intro-summary">I’ve worked on how vehicles perceive and navigate rough terrain, how policies learn from simulation, and how software turns web pages into structured data.</p>
+      <p class="intro-lead">Data, robotics, and machine learning.</p>
+      <p class="intro-summary">My work spans scientific data analysis, off-road autonomy, and software that turns web pages into structured records.</p>
       <ul class="plain-list profile-links" role="list" aria-label="Profiles">
         <li><a href="https://github.com/Siyar1">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/siyar-urya-618265212/">LinkedIn</a></li>
@@ -37,37 +37,58 @@
     <section id="work" aria-labelledby="work-title">
       <div class="section-heading">
         <h2 id="work-title">Selected work</h2>
-        <p>Argos Research · 2026</p>
       </div>
 
-      <ul class="plain-list projects" role="list">
-        <li class="project">
+      <div class="work-filters" role="group" aria-label="Filter projects by area" hidden>
+        <button type="button" data-filter="ml" aria-controls="projects" aria-pressed="false">Machine Learning</button>
+        <button type="button" data-filter="robotics" aria-controls="projects" aria-pressed="false">Robotics</button>
+        <button type="button" data-filter="data" aria-controls="projects" aria-pressed="false">Data</button>
+        <button type="button" data-filter="backend" aria-controls="projects" aria-pressed="false">Backend</button>
+      </div>
+      <p id="work-status" class="visually-hidden" role="status"></p>
+
+      <ul id="projects" class="plain-list projects" role="list">
+        <li class="project" data-areas="robotics">
           <div>
-            <p class="project-area">Robotics</p>
+            <p class="project-meta">Argos Research · 2026</p>
             <h3>Off-road autonomy</h3>
           </div>
           <p>Integrated terrain perception, sensor fusion, planning, and vehicle control in a model-based driving stack. Used replay to trace how errors in terrain estimates affected the paths the planner selected.</p>
         </li>
-        <li class="project">
+        <li class="project" data-areas="data">
           <div>
-            <p class="project-area">Machine learning</p>
+            <p class="project-meta">Environment and Climate Change Canada · 2025</p>
+            <h3>Instrument data quality and alignment</h3>
+          </div>
+          <p>Aligned greenhouse gas instrument logs with GPS-timed survey data using peak matching and correlation. Recovered missing readings from the aligned logs and automated Python quality checks and reports.</p>
+        </li>
+        <li class="project" data-areas="data backend">
+          <div>
+            <p class="project-meta">Argos Research · 2026</p>
+            <h3>Browser agents and structured web extraction</h3>
+          </div>
+          <p>Built the runtime that launches parallel browser agents, controls access to Playwright-backed and custom tools, and caps tool calls. Added context pruning and stop conditions for stalled agents. Built parts of the pipeline that deduplicates page content and extracts structured records.</p>
+        </li>
+        <li class="project" data-areas="robotics ml">
+          <div>
+            <p class="project-meta">Argos Research · 2026</p>
             <h3>Learning to drive from images</h3>
           </div>
           <p>Contributed to teacher–student training in Isaac Lab and helped adapt it to BeamNG. The experiments tested whether a policy using camera images could learn driving behavior from a teacher with access to simulator state.</p>
         </li>
-        <li class="project">
+        <li class="project" data-areas="data">
           <div>
-            <p class="project-area">Computer vision</p>
+            <p class="project-meta">Environment and Climate Change Canada · 2023</p>
+            <h3>Methane emissions estimation</h3>
+          </div>
+          <p>Ran and automated statistical inversion simulations to estimate landfill methane emissions. Compared model fits across weather inputs and analyzed estimates from individual survey passes. Co-authored a <a href="https://pubmed.ncbi.nlm.nih.gov/39630062/">peer-reviewed paper on methane emissions</a>.</p>
+        </li>
+        <li class="project" data-areas="data ml">
+          <div>
+            <p class="project-meta">Argos Research · 2026</p>
             <h3>Image feature search</h3>
           </div>
-          <p>Built a benchmark to compare search methods for small programs that extract image features. Evaluated whether the features remained useful when applied to new datasets.</p>
-        </li>
-        <li class="project">
-          <div>
-            <p class="project-area">Data systems</p>
-            <h3>Structured web extraction</h3>
-          </div>
-          <p>Built the runtime that launches parallel browser agents, controls access to Playwright-backed and custom tools, and caps tool calls. Added context pruning and stop conditions for stalled agents. Also built parts of the pipeline that turns collected pages into structured records.</p>
+          <p>Built a benchmark to compare search methods for small programs that extract image features. Evaluated feature transfer across datasets using linear models and random-feature baselines.</p>
         </li>
       </ul>
     </section>
@@ -77,8 +98,8 @@
         <h2 id="about-title">About</h2>
       </div>
       <div class="about-copy">
-        <p>My background is in physics and computing at the University of Waterloo. At Argos Research, I worked across robotics simulation, machine learning, and software systems as a Member of Technical Staff.</p>
-        <p>At Environment and Climate Change Canada, I ran and analyzed atmospheric emissions simulations and worked on aligning and checking instrument data.</p>
+        <p>I’m most excited by machine learning research and building models end to end, from designing experiments and preparing data to training models and figuring out where they fail. I’m especially interested in robotics and the energy sector, where I’d like to build and test new systems that solve physical problems.</p>
+        <p>I studied physics and computing at the University of Waterloo. I worked on autonomy and machine learning at Argos Research and on atmospheric emissions and instrument data at Environment and Climate Change Canada.</p>
       </div>
     </section>
   </main>
@@ -87,5 +108,34 @@
     <p>Siyar Urya</p>
     <a href="https://www.linkedin.com/in/siyar-urya-618265212/">Get in touch on LinkedIn</a>
   </footer>
+  <script>
+    const filters = document.querySelector('.work-filters');
+    const buttons = filters.querySelectorAll('button');
+    const projects = document.querySelectorAll('#projects .project');
+    const workStatus = document.querySelector('#work-status');
+
+    for (const button of buttons) {
+      button.addEventListener('click', () => {
+        const selecting = button.getAttribute('aria-pressed') === 'false';
+        const area = selecting ? button.dataset.filter : '';
+        for (const filter of buttons) {
+          filter.setAttribute('aria-pressed', String(selecting && filter === button));
+        }
+
+        let visible = 0;
+        for (const project of projects) {
+          const matches = !area || project.dataset.areas.split(' ').includes(area);
+          project.hidden = !matches;
+          visible += Number(matches);
+        }
+
+        const label = selecting ? button.textContent : 'All';
+        const noun = visible === 1 ? 'project' : 'projects';
+        workStatus.textContent = `${label}: ${visible} ${noun} shown.`;
+      });
+    }
+
+    filters.hidden = false;
+  </script>
 </body>
 </html>
