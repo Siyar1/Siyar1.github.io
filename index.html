@@ -1,38 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<link rel="stylesheet" href="personal_css.css">
-	<title>
-		Siyar Urya
-	</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Siyar Urya | Engineering Portfolio</title>
+  <meta name="description" content="Siyar Urya’s engineering portfolio, with selected work in off-road autonomy, machine learning, and structured web extraction.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://siyar1.github.io/">
+  <link rel="stylesheet" href="personal_css.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-	<body>
-		<div class="container">			
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#main">Siyar Urya</a>
+      <nav aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="resume.pdf">Résumé (PDF)</a>
+      </nav>
+    </div>
+  </header>
 
-			<div class="text">
-				<h1>
-					Physics Student
-				</h1>
-			
-				<h2>
-					Siyar Urya
-				</h2>
-				
-				<h4>
-					I'm a third year Physics student at the University of Waterloo
-				</h4>
-			
-				<p>		
-					<strong><a href="resume.pdf">Resume</a></strong>
-					<br>
-					<strong><a href="https://github.com/Siyar1">GitHub</a></strong>
-					<br>
-					<strong><a href="https://www.linkedin.com/in/siyar-urya-618265212/">LinkedIn</a></strong>
-				</p>	
-			</div>
-			
-			<div class="image">
-				<h3> <img src="gigachad.jpg"> </h3>
-			</div>
-		</div>
-	</body>
+  <main id="main" class="shell" tabindex="-1">
+    <section class="intro" aria-labelledby="name">
+      <h1 id="name">Siyar Urya</h1>
+      <p class="intro-lead">Robotics, machine learning, and research engineering.</p>
+      <p class="intro-summary">I’ve worked on how vehicles perceive and navigate rough terrain, how policies learn from simulation, and how software turns web pages into structured data.</p>
+      <ul class="plain-list profile-links" role="list" aria-label="Profiles">
+        <li><a href="https://github.com/Siyar1">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/siyar-urya-618265212/">LinkedIn</a></li>
+      </ul>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <h2 id="work-title">Selected work</h2>
+        <p>Argos Research · 2026</p>
+      </div>
+
+      <ul class="plain-list projects" role="list">
+        <li class="project">
+          <div>
+            <p class="project-area">Robotics</p>
+            <h3>Off-road autonomy</h3>
+          </div>
+          <p>I integrated terrain perception, sensor fusion, planning, and vehicle control in a model-based driving stack. I used replay to trace how errors in terrain estimates affected the paths the planner selected.</p>
+        </li>
+        <li class="project">
+          <div>
+            <p class="project-area">Machine learning</p>
+            <h3>Learning to drive from images</h3>
+          </div>
+          <p>I worked on teacher–student training in Isaac Lab and helped adapt it to BeamNG. The experiments tested whether a policy using camera images could learn driving behavior from a teacher with access to simulator state.</p>
+        </li>
+        <li class="project">
+          <div>
+            <p class="project-area">Computer vision</p>
+            <h3>Image feature search</h3>
+          </div>
+          <p>I built a benchmark to compare search methods for small programs that extract image features. I evaluated whether the features remained useful when applied to new datasets.</p>
+        </li>
+        <li class="project">
+          <div>
+            <p class="project-area">Data systems</p>
+            <h3>Structured web extraction</h3>
+          </div>
+          <p>I built parts of a browser-based pipeline that breaks pages into searchable content and extracts data into typed records.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <h2 id="about-title">About</h2>
+      </div>
+      <div class="about-copy">
+        <p>My background is in physics and computing at the University of Waterloo. At Argos Research, I worked across robotics simulation, machine learning, and software systems as a Member of Technical Staff.</p>
+        <p>At Environment and Climate Change Canada, I ran and analyzed atmospheric emissions simulations and worked on aligning and checking instrument data.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell site-footer">
+    <p>Siyar Urya</p>
+    <a href="https://www.linkedin.com/in/siyar-urya-618265212/">Get in touch on LinkedIn</a>
+  </footer>
+</body>
 </html>

@@ -1,65 +1,207 @@
-* {
-	background-color: #EEE2DC;
+:root {
+  color-scheme: light;
+  --ink: #171717;
+  --muted: #505050;
+  --line: #d6d6d6;
+  --page: #fff;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-size: 100%;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--page);
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-body {
-	text-align: center;
-	font-size: 20px;
-	font-family: "Verdana", sans-serif;
+body, h1, h2, h3, p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.22em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.shell {
+  width: min(100% - 2 * var(--gutter), 64rem);
+  margin-inline: auto;
+}
+
+.plain-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: var(--gutter);
+  z-index: 1;
+  padding: 0.5rem 0.75rem;
+  color: var(--page);
+  background: var(--ink);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+  outline-color: var(--ink);
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner,
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+
+.header-inner {
+  min-height: 4.5rem;
+  padding-block: 0.75rem;
+}
+
+.header-inner a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  text-decoration: none;
+}
+
+.header-inner a:hover {
+  text-decoration: underline;
+}
+
+.wordmark {
+  font-weight: 700;
+}
+
+nav,
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem clamp(1rem, 3vw, 1.75rem);
+  font-size: 0.9375rem;
+}
+
+.intro {
+  padding-block: clamp(3.5rem, 9vw, 7.5rem);
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+  font-weight: 680;
 }
 
 h1 {
-	line-height: 0px;
-	padding-top: 300px;
-	margin-left: 200px;
-	color: #AC3B61;
-	font-family: "Verdana", sans-serif;
-	text-align: left;
-	font-size: 20px;
+  font-size: clamp(3.25rem, 8vw, 6.5rem);
+  letter-spacing: -0.055em;
 }
 
-h2 {
-	line-height: 0px;
-	margin-left: 200px;
-	color: #AC3B61;
-	font-family: "Times New Roman", serif;
-	text-align: left;
-	font-size: 60px;
+.intro-lead {
+  max-width: 30ch;
+  margin-top: 1.25rem;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
 }
 
-h3 {
-	text-align: right;
-	margin-right: 200px;
-	margin-top: 100px;
+.intro-summary {
+  max-width: 58ch;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1.0625rem;
 }
 
-h4 {
-	margin-left: 200px;
-	color: #123C69;
-	font-family: "Verdana", sans-serif;
-	font-size: 18px;
-	text-align: left;
+.profile-links {
+  margin-top: 1.5rem;
+  font-weight: 600;
 }
 
-p {
-	margin-left: 200px;
-	border-left: 3px solid #BAB2B5;
-	color: #123C69;
-	font-family: "Verdana", sans-serif;
-	font-size: 18px;
-	text-align: left;
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-block: 1.6rem 1.35rem;
+  border-top: 2px solid var(--ink);
 }
 
-a:link, a:visited, a:hover, a:active {
-	color: #BAB2B5;
-	text-decoration: none;
+.section-heading h2 {
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  letter-spacing: -0.045em;
 }
 
-img {
-	border-radius: 50%;
+.section-heading p,
+.project-area {
+  color: var(--muted);
+  font-size: 0.875rem;
 }
 
-.container {
-	display: flex;
-	justify-content: space-between;
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: start;
+  gap: 1rem clamp(1.25rem, 5vw, 4.5rem);
+  padding-block: 1.55rem;
+  border-top: 1px solid var(--line);
+}
+
+.project h3 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  letter-spacing: -0.025em;
+}
+
+.project > p,
+.about-copy {
+  color: var(--muted);
+}
+
+.about {
+  margin-top: clamp(2rem, 5vw, 4rem);
+  padding-bottom: clamp(2.75rem, 7vw, 5rem);
+}
+
+.about-copy {
+  max-width: 64ch;
+}
+
+.about-copy p + p {
+  margin-top: 0.8rem;
+}
+
+.site-footer {
+  min-height: 5rem;
+  padding-block: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 40rem) {
+  .project {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding-block: 1.25rem;
+  }
+}
